@@ -4,21 +4,21 @@ import org.thymeleaf.Arguments;
 import org.thymeleaf.dom.Element;
 import org.thymeleaf.processor.IAttributeNameProcessorMatcher;
 
-public class FormFieldTextProcessor extends FormFieldInputProcessor
+public class FormFieldCheckBoxProcessor extends FormFieldSelectProcessor
 {
-	public FormFieldTextProcessor(IAttributeNameProcessorMatcher matcher)
+	public FormFieldCheckBoxProcessor(IAttributeNameProcessorMatcher matcher)
 	{
 		super(matcher);
 	}
-	
-	public FormFieldTextProcessor(String attributeName)
+
+	public FormFieldCheckBoxProcessor(String attributeName)
 	{
 		super(attributeName);
 	}
 	
-	public FormFieldTextProcessor()
+	public FormFieldCheckBoxProcessor()
 	{
-		super("formFieldText");
+		super("formFieldCheckBox");
 	}
 	
 	protected String getText(Arguments arguments,Element element,String attributeName)
@@ -29,12 +29,12 @@ public class FormFieldTextProcessor extends FormFieldInputProcessor
 		
 		switch(values.length)
 		{
-		case 3:
-			text = super.getHTML("text",values[0],values[1],values[2]);
+		case 4:
+			text = super.getHTML("checkbox","checkbox",values[0],values[1],values[2],values[3]);
 			break;
 			
-		case 6:
-			text = super.getHTML("text",values[0],values[1],values[2],values[3],values[4],values[5]);
+		case 7:
+			text = super.getHTML("checkbox",values[0],values[1],values[2],values[3],values[4],values[5],values[6]);
 			break;
 			
 		default:

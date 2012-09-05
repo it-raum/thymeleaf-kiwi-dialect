@@ -4,7 +4,7 @@ import org.thymeleaf.Arguments;
 import org.thymeleaf.dom.Element;
 import org.thymeleaf.processor.IAttributeNameProcessorMatcher;
 
-public class FormFieldPasswordProcessor extends FormFieldAbstractProcessor
+public class FormFieldPasswordProcessor extends FormFieldInputProcessor
 {
 	public FormFieldPasswordProcessor(IAttributeNameProcessorMatcher matcher)
 	{
@@ -25,9 +25,22 @@ public class FormFieldPasswordProcessor extends FormFieldAbstractProcessor
 	{
 		String[] values = element.getAttributeValue(attributeName).trim().split(",");
 		
-		if(values.length != 3)
-			return "";
+		String text = "";
 		
-		return super.getHTML("password",values[0],values[1],values[2]);
+		switch(values.length)
+		{
+		case 3:
+			text = super.getHTML("password",values[0],values[1],values[2]);
+			break;
+			
+		case 6:
+			text = super.getHTML("password",values[0],values[1],values[2],values[3],values[4],values[5]);
+			break;
+			
+		default:
+			text = "";
+		}
+		
+		return text;
 	}
 }

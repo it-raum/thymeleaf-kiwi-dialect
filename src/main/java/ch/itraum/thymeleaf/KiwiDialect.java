@@ -6,26 +6,31 @@ import java.util.Set;
 import org.thymeleaf.dialect.AbstractDialect;
 import org.thymeleaf.processor.IProcessor;
 
-public class KiwiDialect extends AbstractDialect {
-
+public class KiwiDialect extends AbstractDialect
+{
 	@Override
-	public String getPrefix() {
+	public String getPrefix()
+	{
 		return "kiwi";
 	}
-
+	
 	@Override
-	public boolean isLenient() {
+	public boolean isLenient()
+	{
 		return false;
 	}
-
+	
 	@Override
-	public Set<IProcessor> getProcessors() {
+	public Set<IProcessor> getProcessors()
+	{
 		final Set<IProcessor> processors = new HashSet<IProcessor>();
+		
 		processors.add(new LinkButtonProcessor());
 		processors.add(new FormFieldTextProcessor());
 		processors.add(new FormFieldPasswordProcessor());
+		processors.add(new FormFieldCheckBoxProcessor());
+		processors.add(new FormFieldRadioProcessor());
 		
 		return processors;
 	}
-
 }
