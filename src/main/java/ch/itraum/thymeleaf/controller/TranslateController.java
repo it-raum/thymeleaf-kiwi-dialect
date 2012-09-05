@@ -42,10 +42,8 @@ public class TranslateController {
 		
 		if (bindingResult.hasErrors())
 		{
-			return "form";
+			return "translate";
 		}
-		
-		//model.addAttribute(formBean);
 		
 		return "translate";
 	}

@@ -45,8 +45,6 @@ public class FormController {
 			return "form";
 		}
 		
-		//model.addAttribute(formBean);
-		
 		return "form";
 	}
 
