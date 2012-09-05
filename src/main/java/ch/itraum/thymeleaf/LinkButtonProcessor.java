@@ -2,9 +2,9 @@ package ch.itraum.thymeleaf;
 
 import org.thymeleaf.Arguments;
 import org.thymeleaf.dom.Element;
-import org.thymeleaf.processor.attr.AbstractTextChildModifierAttrProcessor;
+import org.thymeleaf.processor.attr.AbstractUnescapedTextChildModifierAttrProcessor;
 
-public class LinkButtonProcessor extends AbstractTextChildModifierAttrProcessor {
+public class LinkButtonProcessor extends AbstractUnescapedTextChildModifierAttrProcessor {
 
 	public LinkButtonProcessor() {
 		super("linkButton");

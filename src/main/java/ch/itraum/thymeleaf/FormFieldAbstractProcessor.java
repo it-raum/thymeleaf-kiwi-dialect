@@ -1,9 +1,9 @@
 package ch.itraum.thymeleaf;
 
 import org.thymeleaf.processor.IAttributeNameProcessorMatcher;
-import org.thymeleaf.processor.attr.AbstractTextChildModifierAttrProcessor;
+import org.thymeleaf.processor.attr.AbstractUnescapedTextChildModifierAttrProcessor;
 
-public abstract class FormFieldAbstractProcessor extends AbstractTextChildModifierAttrProcessor
+public abstract class FormFieldAbstractProcessor extends AbstractUnescapedTextChildModifierAttrProcessor
 {
 	public FormFieldAbstractProcessor(IAttributeNameProcessorMatcher matcher)
 	{
