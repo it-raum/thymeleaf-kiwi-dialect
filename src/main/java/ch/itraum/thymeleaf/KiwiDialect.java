@@ -22,6 +22,9 @@ public class KiwiDialect extends AbstractDialect {
 	public Set<IProcessor> getProcessors() {
 		final Set<IProcessor> processors = new HashSet<IProcessor>();
 		processors.add(new LinkButtonProcessor());
+		processors.add(new FormFieldTextProcessor());
+		processors.add(new FormFieldPasswordProcessor());
+		
 		return processors;
 	}
 
