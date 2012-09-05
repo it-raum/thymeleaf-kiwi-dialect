@@ -5,6 +5,8 @@ import java.util.Set;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
+import org.springframework.format.datetime.DateFormatter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -20,6 +22,14 @@ import ch.itraum.thymeleaf.KiwiDialect;
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+	
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		
+		DateFormatter dateFormatter = new DateFormatter("dd.MM.yyyy");
+		
+		registry.addFormatter(dateFormatter);
+	}
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

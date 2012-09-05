@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:kiwi="http://www.it-raum.ch">
+	<head>
+		<meta charset="utf-8" />
+		<title>Kiwi Thymeleaf Testbed - Form Processing</title>
+
+		<!-- Le styles -->
+		<link href="resources/css/bootstrap.css" rel="stylesheet" />
+		<link href="resources/css/bootstrap-responsive.css" rel="stylesheet" />
+
+		<script src="resources/js/jquery-1.8.1.min.js"></script>
+		<script src="resources/js/bootstrap.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+		
+			<h1>Kiwi Thymeleaf Testbed - Form Processing</h1>
+			
+			<form class="form-horizontal" action="#" th:action="@{/form}" th:object="${formBean}" method="post">
+				<div class="control-group" th:class="${#fields.hasErrors('name')} ? 'control-group error' : 'control-group'">
+					<label class="control-label" for="inputName">Name</label>
+					<div class="controls">
+						<input type="text" id="inputName" placeholder="Name" th:field="*{name}" />
+						<span class="help-inline" th:if="${#fields.hasErrors('name')}" th:each="err : ${#fields.errors('name')}" th:text="${err}">Please correct the error</span>
+					</div>
+				</div>
+				<div class="control-group" th:class="${#fields.hasErrors('date')} ? 'control-group error' : 'control-group'">
+					<label class="control-label" for="inputDate">Date</label>
+					<div class="controls">
+						<input type="datetime" id="inputDate" placeholder="Date" th:field="*{date}" />
+						<span class="help-inline" th:if="${#fields.hasErrors('date')}" th:each="err : ${#fields.errors('date')}" th:text="${err}">Please correct the error</span>
+					</div>
+				</div>
+				<div class="control-group" th:class="${#fields.hasErrors('category')} ? 'control-group error' : 'control-group'">
+					<label class="control-label" for="inputCategory">Category</label>
+					<div class="controls">
+						<select th:field="*{category}">
+							<option th:each="category : ${categoryList}" th:value="${category}" th:text="${category}">Wireframe</option>
+						</select>
+						<span class="help-inline" th:if="${#fields.hasErrors('category')}" th:each="err : ${#fields.errors('category')}" th:text="${err}">Please correct the error</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="button" class="btn">Cancel</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
