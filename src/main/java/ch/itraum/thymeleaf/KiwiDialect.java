@@ -29,9 +29,13 @@ public class KiwiDialect extends AbstractDialect
 		processors.add(new FormFieldTextProcessor());
 		processors.add(new FormFieldPasswordProcessor());
 		processors.add(new FormFieldCheckBoxProcessor());
+		processors.add(new FormFieldCheckBoxMultiProcessor());
 		processors.add(new FormFieldRadioProcessor());
 		
 		processors.add(new FormFieldValidatedTextProcessor());
+		processors.add(new FormFieldValidatedPasswordProcessor());
+		
+		processors.add(new FormFieldButtonProcessor());
 		
 		return processors;
 	}

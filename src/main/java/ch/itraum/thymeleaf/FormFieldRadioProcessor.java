@@ -29,12 +29,12 @@ public class FormFieldRadioProcessor extends FormFieldSelectProcessor
 		
 		switch(values.length)
 		{
-		case 4:
-			text = super.getHTML("radio","radio",values[0],values[1],values[2],values[3]);
+		case 2:
+			text = super.getHTMLMulti("radio",values[0],values[1],"control-label");
 			break;
 			
-		case 7:
-			text = super.getHTML("radio",values[0],values[1],values[2],values[3],values[4],values[5],values[6]);
+		case 3:
+			text = super.getHTMLMulti("radio",values[0],values[1],values[2]);
 			break;
 			
 		default:

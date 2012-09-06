@@ -30,15 +30,15 @@ public class FormFieldValidatedTextProcessor extends FormFieldValidatedInputProc
 		switch(values.length)
 		{
 		case 4:
-			text = super.getHTML(values[0],"text",values[1],values[2],values[3]);
+			text = super.getHTML("text",values[0],values[1],values[2],values[3]);
 			break;
 			
 		case 5:
-			text = super.getHTML(values[0],"text",values[1],values[2],values[3],values[4]);
+			text = super.getHTML("text",values[0],values[1],values[2],values[3],values[4]);
 			break;
 			
 		case 8:
-			text = super.getHTML(values[0],"text",values[1],values[2],values[3],values[4],values[5],values[6],values[7]);
+			text = super.getHTML("text",values[0],values[1],values[2],values[3],values[4],values[5],values[6],values[7]);
 			break;
 			
 		default:

@@ -29,12 +29,12 @@ public class FormFieldPasswordProcessor extends FormFieldInputProcessor
 		
 		switch(values.length)
 		{
-		case 3:
-			text = super.getHTML("password",values[0],values[1],values[2]);
+		case 4:
+			text = super.getHTML("password",values[0],values[1],values[2],values[3]);
 			break;
 			
-		case 6:
-			text = super.getHTML("password",values[0],values[1],values[2],values[3],values[4],values[5]);
+		case 7:
+			text = super.getHTML("password",values[0],values[1],values[2],values[3],values[4],values[5],values[6]);
 			break;
 			
 		default:

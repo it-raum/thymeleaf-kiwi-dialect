@@ -29,12 +29,16 @@ public class FormFieldCheckBoxProcessor extends FormFieldSelectProcessor
 		
 		switch(values.length)
 		{
-		case 4:
-			text = super.getHTML("checkbox","checkbox",values[0],values[1],values[2],values[3]);
+		case 3:
+			text = getHTML(values[0],values[1],values[2],"control-label");
 			break;
 			
-		case 7:
-			text = super.getHTML("checkbox",values[0],values[1],values[2],values[3],values[4],values[5],values[6]);
+		case 4:
+			text = getHTML(values[0],values[1],values[2],values[3]);
+			break;
+			
+		case 5:
+			text = getHTML(values[0],values[1],values[2],values[3],values[4]);
 			break;
 			
 		default:
@@ -42,5 +46,22 @@ public class FormFieldCheckBoxProcessor extends FormFieldSelectProcessor
 		}
 		
 		return text;
+	}
+	
+	private static String getHTML(String dataField,String labelTitle,String fieldID,String classCSSLabel)
+	{
+		return getHTML(dataField,labelTitle,fieldID,classCSSLabel,"controls");
+	}
+	
+	private static String getHTML(String dataField,String labelTitle,String fieldID,String classCSSLabel,String classCSSDiv)
+	{
+		String html = "";
+		
+		html += "<div class=\"" + classCSSDiv + "\">\n";
+		html += "<label for=\"" + fieldID + "\">" + labelTitle + "</label>\n";
+		html += "<input type=\"checkbox\"  id=\"" + fieldID + "\" th:field=\"*{" + dataField + "}\" />\n";
+		html += "</div>\n";
+		
+		return html;
 	}
 }

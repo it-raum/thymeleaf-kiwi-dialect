@@ -14,22 +14,16 @@ public abstract class FormFieldSelectProcessor extends FormFieldAbstractProcesso
 		super(attributeName);
 	}
 	
-	protected static String getHTML(String classCSSLabel,String fieldType,String fieldID,String fieldName,String fieldValue,String fieldText)
-	{
-		return getHTML("controls","control-group",classCSSLabel,fieldType,fieldID,fieldName,fieldValue,fieldText);
-	}
-	
-	protected static String getHTML(String classCSSDiv,String classCSSDivGroup,String classCSSLabel,String fieldType,String fieldID,String fieldName,String fieldValue,String fieldText)
+	protected static String getHTMLMulti(String fieldType,String containerName,String iteratorName,String classCSSLabel)
 	{
 		String html = "";
 		
-		html += "<div class=\"" + classCSSDivGroup + ">\n";
-		html += "<div class=\"" + classCSSDiv + "\">\n";
-		html += "<label class=\"" + classCSSLabel + "\">\n";
-		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" name=\"" + fieldName + "\" value=\"" + fieldValue + "\" />" + fieldText + "\n";
-		html += "</label>\n";
-		html += "</div>\n";
-		html += "</div>\n";
+		html += "<ul>\n";
+		html += "<li th:each=\"" + iteratorName + " : ${" + containerName + "}\">\n";
+		html += "<input type=\"" + fieldType + "\" th:value=\"${" + iteratorName + "}\" th:text=\"${" + iteratorName + "}\" />\n";
+		html += "<label th:text=\"${" + iteratorName + "}\">Label</label>\n";
+		html += "</li>\n";
+		html += "</ul>\n";
 		
 		return html;
 	}

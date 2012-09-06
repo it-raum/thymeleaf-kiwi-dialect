@@ -14,19 +14,19 @@ public abstract class FormFieldInputProcessor extends FormFieldAbstractProcessor
 		super(attributeName);
 	}
 	
-	protected static String getHTML(String fieldType,String fieldID,String placeholder,String labelTitle)
+	protected static String getHTML(String fieldType,String dataField,String labelTitle,String fieldID,String placeholder)
 	{
-		return getHTML("controls","control-group","control-label",fieldType,fieldID,placeholder,labelTitle);
+		return getHTML(fieldType,dataField,labelTitle,fieldID,placeholder,"controls","control-group","control-label");
 	}
 	
-	protected static String getHTML(String classCSSDiv,String classCSSDivGroup,String classCSSLabel,String fieldType,String fieldID,String placeholder,String labelTitle)
+	protected static String getHTML(String fieldType,String dataField,String labelTitle,String fieldID,String placeholder,String classCSSDiv,String classCSSDivGroup,String classCSSLabel)
 	{
 		String html = "";
 		
 		html += "<div class=\"" + classCSSDivGroup + "\">\n";
 		html += "<label class=\"" + classCSSLabel + "\" for=\"" + fieldID + "\">" + labelTitle + "</label>\n";
 		html += "<div class=\"" + classCSSDiv + "\">\n";
-		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" placeholder=\"" + placeholder + "\" />\n";
+		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" placeholder=\"" + placeholder + "\" th:field=\"*{" + dataField + "}\" />\n";
 		html += "</div>\n";
 		html += "</div>\n";
 		

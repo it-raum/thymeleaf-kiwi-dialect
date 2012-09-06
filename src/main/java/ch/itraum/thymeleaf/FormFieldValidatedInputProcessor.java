@@ -14,17 +14,17 @@ public abstract class FormFieldValidatedInputProcessor extends FormFieldValidate
 		super(attributeName);
 	}
 	
-	protected static String getHTML(String dataField,String fieldType,String fieldID,String placeholder,String labelTitle)
+	protected static String getHTML(String fieldType,String dataField,String labelTitle,String fieldID,String placeholder)
 	{
-		return getHTML("controls","control-group","control-label","help-inline",dataField,fieldType,fieldID,placeholder,labelTitle);
+		return getHTML(fieldType,dataField,labelTitle,fieldID,placeholder,"help-inline","controls","control-group","control-label");
 	}
 	
-	protected static String getHTML(String classCSSError,String dataField,String fieldType,String fieldID,String placeholder,String labelTitle)
+	protected static String getHTML(String fieldType,String dataField,String labelTitle,String fieldID,String placeholder,String classCSSError)
 	{
-		return getHTML("controls","control-group","control-label",classCSSError,dataField,fieldType,fieldID,placeholder,labelTitle);
+		return getHTML(fieldType,dataField,labelTitle,fieldID,placeholder,classCSSError,"controls","control-group","control-label");
 	}
 	
-	protected static String getHTML(String classCSSDiv,String classCSSDivGroup,String classCSSLabel,String classCSSError,String dataField,String fieldType,String fieldID,String placeholder,String labelTitle)
+	protected static String getHTML(String fieldType,String dataField,String labelTitle,String fieldID,String placeholder,String classCSSError,String classCSSDiv,String classCSSDivGroup,String classCSSLabel)
 	{
 		String html = "";
 		
@@ -33,7 +33,7 @@ public abstract class FormFieldValidatedInputProcessor extends FormFieldValidate
 		html += "'" + classCSSDivGroup + " error' : '" + classCSSDivGroup + "'\">\n";
 		html += "<label class=\"" + classCSSLabel + "\" for=\"" + fieldID + "\">" + labelTitle + "</label>\n";
 		html += "<div class=\"" + classCSSDiv + "\">\n";
-		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" placeholder=\"" + placeholder + "\" th:field=\"*{" + dataField + "}\"/>\n";
+		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" placeholder=\"" + placeholder + "\" th:field=\"*{" + dataField + "}\" />\n";
 		html += getErrorHTML(classCSSError,dataField);
 		html += "</div>\n";
 		html += "</div>\n";

@@ -16,7 +16,14 @@
 		<div class="container">
 		
 			<h1>Kiwi Thymeleaf Testbed - Form Processing</h1>
+			<form class="form-horizontal" action="#" th:action="@{/testform}" th:object="${testFormBean}" method="post">
+			<p kiwi:formFieldValidatedText="email,Email,emailID,Email">Email Field</p>
+			<p kiwi:formFieldValidatedPassword="password,Password,passwordID,Password">Password Field</p>
+			<p kiwi:formFieldCheckBoxMulti="userOptionCheckBox,userOptionCB">CheckBox Field</p>
+			<!-- <p kiwi:formFieldRadio="inputRadio,Radio,RadioTest,Test">Radio Field</p> -->
 			
+			<p kiwi:formFieldButton="Sign In">Button</p>
+		</form>
 		</div>
 	</body>
 </html>
