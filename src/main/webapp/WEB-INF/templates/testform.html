@@ -19,8 +19,8 @@
 			<form class="form-horizontal" action="#" th:action="@{/testform}" th:object="${testFormBean}" method="post">
 			<p kiwi:formFieldValidatedText="email,Email,emailID,Email">Email Field</p>
 			<p kiwi:formFieldValidatedPassword="password,Password,passwordID,Password">Password Field</p>
-			<p kiwi:formFieldCheckBoxMulti="userOptionCheckBox,userOptionCB">CheckBox Field</p>
-			<!-- <p kiwi:formFieldRadio="inputRadio,Radio,RadioTest,Test">Radio Field</p> -->
+			<p kiwi:formFieldCheckBoxMulti="optionsCB,userOptionCheckBox,userOptionCB">CheckBox Field</p>
+			<p kiwi:formFieldRadio="optionR,userOptionRadio,userOptionR">Radio Field</p>
 			
 			<p kiwi:formFieldButton="Sign In">Button</p>
 		</form>

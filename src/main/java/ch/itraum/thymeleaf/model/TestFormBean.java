@@ -14,6 +14,8 @@ public class TestFormBean
 	@NotEmpty
 	private String password;
 	
+	private String optionR;
+	
 	private Boolean remember;
 	
 	public String getEmail()
@@ -44,6 +46,16 @@ public class TestFormBean
 	public void setRemember(Boolean status)
 	{
 		this.remember = status;
+	}
+	
+	public String getOptionR()
+	{
+		return optionR;
+	}
+	
+	public void setOptionR(String option)
+	{
+		this.optionR = option;
 	}
 	
 	@Override

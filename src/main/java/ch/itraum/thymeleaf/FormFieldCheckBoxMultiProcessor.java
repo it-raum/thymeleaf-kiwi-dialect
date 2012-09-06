@@ -29,12 +29,12 @@ public class FormFieldCheckBoxMultiProcessor extends FormFieldSelectProcessor
 		
 		switch(values.length)
 		{
-		case 2:
-			text = super.getHTMLMulti("checkbox",values[0],values[1],"control-label");
+		case 3:
+			text = super.getHTMLMulti("checkbox",values[0],values[1],values[2],"control-label");
 			break;
 			
-		case 3:
-			text = super.getHTMLMulti("checkbox",values[0],values[1],values[2]);
+		case 4:
+			text = super.getHTMLMulti("checkbox",values[0],values[1],values[2],values[3]);
 			break;
 			
 		default:

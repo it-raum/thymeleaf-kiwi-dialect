@@ -14,13 +14,13 @@ public abstract class FormFieldSelectProcessor extends FormFieldAbstractProcesso
 		super(attributeName);
 	}
 	
-	protected static String getHTMLMulti(String fieldType,String containerName,String iteratorName,String classCSSLabel)
+	protected static String getHTMLMulti(String fieldType,String dataField,String containerName,String iteratorName,String classCSSLabel)
 	{
 		String html = "";
 		
 		html += "<ul>\n";
 		html += "<li th:each=\"" + iteratorName + " : ${" + containerName + "}\">\n";
-		html += "<input type=\"" + fieldType + "\" th:value=\"${" + iteratorName + "}\" th:text=\"${" + iteratorName + "}\" />\n";
+		html += "<input name=\"" + dataField + "\" type=\"" + fieldType + "\" th:value=\"${" + iteratorName + "}\"/>\n";
 		html += "<label th:text=\"${" + iteratorName + "}\">Label</label>\n";
 		html += "</li>\n";
 		html += "</ul>\n";

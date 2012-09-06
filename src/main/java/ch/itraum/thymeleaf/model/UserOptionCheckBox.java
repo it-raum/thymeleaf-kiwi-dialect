@@ -2,5 +2,6 @@ package ch.itraum.thymeleaf.model;
 
 public enum UserOptionCheckBox
 {
-	Remember
+	Remember,
+	Remember_Not
 }
