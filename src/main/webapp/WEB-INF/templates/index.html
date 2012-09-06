@@ -16,19 +16,6 @@
 		<h1>To the world...</h1>
 
 		<p kiwi:linkButton="http://www.thymeleaf.org">Hi ya!</p>
-
-		<form class="form-horizontal" action="#" th:action="@{/form}" th:object="${formBean}" method="post">
-			<p kiwi:formFieldValidatedText="email,inputEmail,Email,Email">Email Field</p>
-			<p kiwi:formFieldPassword="inputPassword,Password,Password">Password Field</p>
-			<p kiwi:formFieldCheckBox="inputCheckBox,CheckBox,Remember,Remember me">CheckBox Field</p>
-			<p kiwi:formFieldRadio="inputRadio,Radio,RadioTest,Test">Radio Field</p>
-				
-			<div class="control-group">
-				<div class="controls">
-					<button type="submit" class="btn">Sign in</button>
-				</div>
-			</div>
-		</form>
 	</div>
 </body>
 </html>

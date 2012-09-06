@@ -13,7 +13,26 @@ import ch.itraum.thymeleaf.model.FormBean;
 @Controller
 public class IndexController
 {
-	@RequestMapping(value = "/form",method = RequestMethod.GET)
+	@RequestMapping(value = "/",method = RequestMethod.GET)
+	public String showIndex(Model model)
+	{
+		model.addAttribute(new FormBean());
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/",method = RequestMethod.POST)
+	public String processIndex(@Valid FormBean formBean,BindingResult bindingResult,Model model)
+	{
+		if(bindingResult.hasErrors())
+		{
+			return "index";
+		}
+		
+		return "index";
+	}
+	
+	/*@RequestMapping(value = "/form",method = RequestMethod.GET)
 	public String showIndex(Model model)
 	{
 		model.addAttribute(new FormBean());
@@ -30,5 +49,5 @@ public class IndexController
 		}
 		
 		return "index";
-	}
+	}*/
 }
