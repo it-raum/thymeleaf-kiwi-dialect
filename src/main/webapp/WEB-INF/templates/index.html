@@ -17,8 +17,8 @@
 
 		<p kiwi:linkButton="http://www.thymeleaf.org">Hi ya!</p>
 
-		<form class="form-horizontal">
-			<p kiwi:formFieldText="inputEmail,Email,Email">Email Field</p>
+		<form class="form-horizontal" action="#" th:action="@{/form}" th:object="${formBean}" method="post">
+			<p kiwi:formFieldValidatedText="email,inputEmail,Email,Email">Email Field</p>
 			<p kiwi:formFieldPassword="inputPassword,Password,Password">Password Field</p>
 			<p kiwi:formFieldCheckBox="inputCheckBox,CheckBox,Remember,Remember me">CheckBox Field</p>
 			<p kiwi:formFieldRadio="inputRadio,Radio,RadioTest,Test">Radio Field</p>

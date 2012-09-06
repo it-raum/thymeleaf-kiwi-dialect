@@ -23,7 +23,7 @@ public abstract class FormFieldSelectProcessor extends FormFieldAbstractProcesso
 	{
 		String html = "";
 		
-		html += "<div class=\"" + classCSSDivGroup + "\">\n";
+		html += "<div class=\"" + classCSSDivGroup + ">\n";
 		html += "<div class=\"" + classCSSDiv + "\">\n";
 		html += "<label class=\"" + classCSSLabel + "\">\n";
 		html += "<input type=\"" + fieldType + "\" id=\"" + fieldID + "\" name=\"" + fieldName + "\" value=\"" + fieldValue + "\" />" + fieldText + "\n";
