@@ -18,34 +18,34 @@ import ch.itraum.thymeleaf.model.Category;
 import ch.itraum.thymeleaf.model.FormBean;
 
 @Controller
-public class FormController {
+public class TranslateController {
 	
-	private final Logger logger = LoggerFactory.getLogger(FormController.class);
+	private final Logger logger = LoggerFactory.getLogger(TranslateController.class);
 	
 	@ModelAttribute("categoryList")
 	public List<Category> populateCategorys() {
 		return Arrays.asList(Category.values());
 	}
 	
-	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	@RequestMapping(value = "/translate", method = RequestMethod.GET)
 	public String showForm(Model model) {
 		
 		model.addAttribute(new FormBean());
 		
-		return "form";
+		return "translate";
 	}
 	
-	@RequestMapping(value = "/form", method = RequestMethod.POST)
+	@RequestMapping(value = "/translate", method = RequestMethod.POST)
 	public String processForm(@Valid FormBean formBean, BindingResult bindingResult, Model model) {
 		
 		logger.debug("FormBean: " + formBean);
 		
 		if (bindingResult.hasErrors())
 		{
-			return "form";
+			return "translate";
 		}
 		
-		return "form";
+		return "translate";
 	}
 
 }
