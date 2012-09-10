@@ -73,6 +73,53 @@ public class TestFormBean
 	@Override
 	public String toString()
 	{
-		return "TestFormBean [email=" + email + "]";
+		String text = "";
+		
+		text += "*** TestFormBean ***\n";
+		text += "Email:\t\t" + email + "\n";
+		text += "Password:\t" + password + "\n";
+		text += "Radio:\t\t" + optionR + "\n";
+		
+		if(this.optionsCB.length == 0)
+		{
+			text += "Check Box:\tEmpty\n";
+		}
+		else
+		{
+			text += "Check Box:\n";
+			
+			for(int i = 0;i < this.optionsCB.length;i++)
+				text += "\t[" + i + "]:\t" + this.optionsCB[i] + "\n";
+		}
+		
+		text += "***************\n";
+		
+		return text;
+	}
+	
+	public String getInfo()
+	{
+		String html = "";
+		
+		html += "TestFormBean [";
+		html += "Email: '" + this.email + "' | ";
+		html += "Password: '" + this.password + "' | ";
+		html += "Radio: '" + this.optionR + "' | ";
+		
+		if(this.optionsCB == null || this.optionsCB.length == 0)
+		{
+			html += "Check Box: Empty";
+		}
+		else
+		{
+			html += "Check Box: ";
+			
+			for(int i = 0;i < this.optionsCB.length;i++)
+				html += "'" + this.optionsCB[i] + "', ";
+		}
+		
+		html += "]";
+		
+		return html;
 	}
 }

@@ -20,7 +20,8 @@ public abstract class FormFieldSelectProcessor extends FormFieldAbstractProcesso
 		
 		html += "<ul>\n";
 		html += "<li th:each=\"" + iteratorName + " : ${" + containerName + "}\">\n";
-		html += "<input name=\"" + dataField + "\" type=\"" + fieldType + "\" th:value=\"${" + iteratorName + "}\"/>\n";
+		//html += "<input name=\"" + dataField + "\" type=\"" + fieldType + "\" th:value=\"${" + iteratorName + "}\"/>\n";
+		html += "<input type=\"" + fieldType + "\" th:field=\"*{" + dataField + "}\" th:value=\"${" + iteratorName + "}\"/>\n";
 		html += "<label th:text=\"${" + iteratorName + "}\">Label</label>\n";
 		html += "</li>\n";
 		html += "</ul>\n";

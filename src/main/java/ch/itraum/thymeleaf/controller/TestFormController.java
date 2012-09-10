@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +23,8 @@ import ch.itraum.thymeleaf.model.TestFormBean;
 @Controller
 public class TestFormController
 {
+	private final Logger logger = LoggerFactory.getLogger(TestFormController.class);
+	
 	@ModelAttribute("userOptionCheckBox")
 	public List<UserOptionCheckBox> populateUserOptionCheckBox()
 	{
@@ -43,6 +48,8 @@ public class TestFormController
 	@RequestMapping(value = "/testform",method = RequestMethod.POST)
 	public String processForm(@Valid TestFormBean testFormBean,BindingResult bindingResult,Model model)
 	{
+		logger.debug("TestFormBean: " + testFormBean);
+		
 		if(bindingResult.hasErrors())
 		{
 			return "testform";
